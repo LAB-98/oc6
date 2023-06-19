@@ -1,5 +1,5 @@
 import './header.scss'
-
+import Logo from '../../assets/logo.png';
 
 // Composant
 const Header = () => (
