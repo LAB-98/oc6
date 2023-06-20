@@ -1,6 +1,6 @@
 import './home.scss'
-import Header from "../../components/header/header";
-import Banner from '../../components/banner/banner'
+import Header from '../../components/header/header';
+import Banner from '../../components/banner/banner';
 import Lodging from '../../components/lodging/lodging';
 import Footer from '../../components/footer/footer';
 
