@@ -1,4 +1,4 @@
-@import '../../sass/main.scss';
+@import '../../sass/utils/mixins';
 
 .header {
     @include flex(row, space-between, center);
