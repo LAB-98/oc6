@@ -1,13 +1,13 @@
 // Imports
-import './footer.scss';
+import './Footer.scss';
 import logo from '../../assets/logo_footer.png';
 
 // Component
-const Footer = () => (
-  <footer className='footer'>
-    <img src={logo} alt="Kasa - agence de location d'appartements entre particuliers" />
-    <p className='footer_copyright'>© 2023 Kasa. Tous droits réservés</p>
-  </footer>
-);
-
-export default Footer;
+export default function Footer() {
+	return(
+		<footer className='footer'>
+			<img src={logo} alt="Kasa - agence de location d'appartements entre particuliers" />
+			<p className='footer_copyright'>© 2023 Kasa. Tous droits réservés</p>
+		</footer>
+	);
+}

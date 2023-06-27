@@ -1,45 +1,76 @@
-import './lodging.scss'
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Offers from '../../offers/offers'
-import Header from "../../components/header/header";
-//import Slider from "../../components/carousel/carousel"
-import Footer from "../../components/footer/footer";
-//import Collapse from '../../components/collapse';
-//import greyStar from '../../assets/grey_star.png';
-//import redStar from '../../assets/red_star.png';
+import Collapse from '../../components/Collapse/Collapse';
+import redStar from '../../assets/red_star.png';
+import greyStar from '../../assets/grey_star.png';
 
-// Accomodation Component displays details about a specific accommodation
+import './Lodging.scss';
+
 export default function Lodging() {
-	// State variables
-	const [currentLodging, setCurrentLodging] = useState(null);
-	// Accessing id from url parameters
-	const { id } = useParams();
-	
-	// UseEffect to fetch accommodation data when id changes
-	useEffect(() => {
-		const lodgingcard = Offers.find(data => data.id === id);
-		setCurrentLodging(lodgingcard);
-	}, [id]);
+    const { id } = useParams();
+    const [currentLodging, setCurrentLodging] = useState(null);
 
-	if (!currentLodging) {
-		// render null or a loading spinner while the accommodation data is being fetched
-		return null;
-	}
+    useEffect(() => {
+        fetch("http://localhost:3000/lodging.json")
+        .then(function(res){
+            if(res.ok){
+                return res.json();
+            }
+            throw new Error('Network response was not ok');
+        })
+        .then(function(json){
+            const match = json.find(data => data.id === id);
+            if(match) {
+                setCurrentLodging(match);
+            }
+            else {
+                
+            }
+        })
+        .catch(function(err){
+            console.log(err);
+            
+        });
+    }, [id]);
 
-	// Extracting name and rating from the current accommodation #####to-do
-	//const name = currentAccomodation.host.name.split(' '); 
-	//const rating = currentAccomodation.rating;
-
-	return (
-		<>
-			<Header/>
-			<main className="accomodation">
-				{/* Rest of your code...*/}
-			</main>
-			<Footer/>
-		</>
-	)
+    return (
+        <div className='Lodging'>
+            {currentLodging && (
+                <>
+                <h1>{currentLodging.title}</h1>
+                <p>{currentLodging.location}</p>
+                <div>
+                    {currentLodging.tags.map((tag, index) => (
+                        <button key={index}>{tag}</button>
+                    ))}
+                </div>
+                <div>
+                    <span>{currentLodging.host.name.split(' ')[0]}</span>
+                    <span>{currentLodging.host.name.split(' ')[1]}</span>
+                    <img src={currentLodging.host.picture} alt="host of this lodging" />
+                </div>
+                <div>
+                    {[...Array(5)].map((star, index) => {
+                        const ratingValue = index + 1;
+                        return (
+                            <img 
+                              key={index} 
+                              src={ratingValue <= currentLodging.rating ? redStar : greyStar} 
+                              alt="star" 
+                            />
+                        )
+                    })}
+                </div>
+                <div className="Lodging_collapse">
+                    <div className="Lodging_collapse_item">
+                        <Collapse title={'Description'} content={currentLodging.description} />	
+                    </div>
+                    <div className="Lodging_collapse_item">
+                        <Collapse title={'Equipments'} content={currentLodging.equipments}/>
+                    </div>	
+                </div>
+                </>
+            )}
+        </div>
+    )
 }
-
-//below Header <Slider imageSlider={currentLodging.pictures}/>//

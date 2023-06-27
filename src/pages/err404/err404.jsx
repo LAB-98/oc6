@@ -1,12 +1,10 @@
-import './err404.scss'
-import Header from "../../components/header/header";
+import './Err404.scss'
 import { Link } from 'react-router-dom';
 
 // NotFound Component displays a 404 error page to the user when they navigate to a route that doesn't exist
 export default function Err404() {
 	return (
 		<div className='err404'>
-			<Header />
 			<div className="err404_infos">
 				<h1 className='err404_infos_title'>404</h1>
 				<p className='err404_infos_content'>La page que vous recherchez n'existe pas.</p>

@@ -1,36 +1,30 @@
-import './collapse.scss'
+import './Collapse.scss'
 import arrow from '../../assets/arrow.png';
 import { useState } from 'react';
 
-export default function Collapse({title, content}) {
-    const [toggle, setToggle] = useState(false);
+export default function Collapse(props) {
 
-    const handleToggle = () => {
-        setToggle(!toggle);
-    };
+	const [toggle, setToggle] = useState(false);
 
-    const renderContent = () => {
-        if (Array.isArray(content)) {
-            return content.map((item, index) => <p key={index}>{item}</p>);
-        }
-        return content;
-    };
+	const handleToggle = () => {
+		setToggle(!toggle);
+	};
 
-    return (
-        <>
-            <div className="collapse" >
-                <h3 className='collapse_title' onClick={handleToggle} >
-                    {title}
-                    <img 
-                        className={toggle ? 'arrow arrow_up' : 'arrow arrow_down'} 
-                        src={arrow} 
-                        alt="show content" 
-                    />
-                </h3>
-                <div className={toggle ? 'collapse_content' : 'collapse_content_hidden'}>
-                    {renderContent()}
-                </div> 
-            </div>
-        </>
-    );
+	return (
+		<>
+			<div className="collapse" >
+				<h3 className='collapse_title' onClick={handleToggle} >
+					{props.title}
+					<img
+						className={toggle ? 'arrow arrow_up' : 'arrow arrow_down'}
+						src={arrow}
+						alt="show content"
+					/>
+				</h3>
+				<div className={toggle ? 'collapse_content' : 'collapse_content_hidden'}>
+					{props.content}
+				</div>
+			</div>
+		</>
+	);
 }

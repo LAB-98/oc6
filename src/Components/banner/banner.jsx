@@ -1,19 +1,11 @@
-import './banner.scss'
+import './Banner.scss'
 import { useLocation } from 'react-router-dom';
 
-function useAboutPage() {
-	const location = useLocation();
-	const isAboutPage = location.pathname === '/about-us';
-	return isAboutPage;
-}
-
-export default function Banner() {
-	const isAboutPage = useAboutPage();
-
+export default function Banner(props) {
 	return (
-		<section className={isAboutPage ? 'banner_about' : 'banner'}>
-			{!isAboutPage && <p>Chez vous, partout et ailleurs</p>}
+		<section className='banner'>
+			<img src={props.image} alt={props.content} title={props.content} />
+			<p>{props.content}</p>
 		</section>
 	)
 }
-

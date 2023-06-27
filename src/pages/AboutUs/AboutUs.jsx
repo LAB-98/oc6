@@ -1,7 +1,7 @@
-import './about-us';
-import Header from "../../components/header/header";
-import Footer from '../../components/footer/footer';
-import Collapse from '../../components/collapse/collapse';
+import './AboutUs.scss';
+import Collapse from '../../components/Collapse/Collapse';
+import Banner from '../../components/Banner/Banner';
+import BannerImage from '../../assets/about_cover.png';
 
 const aboutDatas = [
 	{
@@ -26,18 +26,23 @@ const aboutDatas = [
 	}
 ]
 
-export default function About() {
+export default function AboutUs() {
 	return (
 		<div>
-			<Header />
 			<main className='about_main'>
-    {aboutDatas.map(data => (
-        <div key={data.id} className="about_main_collapse">
-            <Collapse title={data.title} content={data.content} />
-        </div>
-    ))}
-</main>
-			<Footer />
+				<Banner
+					image={BannerImage}
+					content=""
+				/>
+				{aboutDatas.map(data => (
+					<div key={data.id} className="about_main_collapse">
+						<Collapse
+							title={data.title}
+							content={data.content}
+						/>
+					</div>
+				))}
+			</main>
 		</div>
 	)
 }
