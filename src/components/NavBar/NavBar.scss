@@ -4,7 +4,7 @@
 .nav_list{
     display: flex;
     gap: 50px;
-    color: #d0d0d0;
+    color: #FF6060;
     font-size: clamp(12px, 2.5vw, 24px);
     @media screen and (max-width: 700px){
         gap: 20px;
@@ -12,9 +12,9 @@
     &_item{
         &_active{
             position: relative;
-            color: #d0d0d0;
+            color: #FF6060;
             transition: all 0.2s ease-in-out;
-            text-decoration: underline solid #d0d0d0;
+            text-decoration: underline solid #FF6060;
             
         }
     }

@@ -1,11 +1,18 @@
-import './Banner.scss'
-import { useLocation } from 'react-router-dom';
+import React from "react";
+import './Banner.scss';
 
-export default function Banner(props) {
-	return (
-		<section className='banner'>
-			<img src={props.image} alt={props.content} title={props.content} />
-			<p>{props.content}</p>
-		</section>
-	)
+function Banner({image, content}) {
+    const bannerStyle = {
+        backgroundImage: `url(${image})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+    };
+
+    return (
+        <div className="banner" style={bannerStyle}>
+            <p>{content}</p>
+        </div>
+    );
 }
+
+export default Banner;
