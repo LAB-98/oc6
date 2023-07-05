@@ -15,4 +15,5 @@ function Banner({image, content}) {
     );
 }
 
+
 export default Banner;
