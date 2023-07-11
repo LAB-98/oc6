@@ -1,4 +1,4 @@
-import './Err404.scss'
+
 import { Link } from 'react-router-dom';
 
 // NotFound Component displays a 404 error page to the user when they navigate to a route that doesn't exist

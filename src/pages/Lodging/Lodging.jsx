@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Collapse from '../../components/Collapse/Collapse';
 import redStar from '../../assets/red_star.png';
 import greyStar from '../../assets/grey_star.png';
@@ -8,6 +8,7 @@ import './Lodging.scss';
 
 export default function Lodging() {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [currentLodging, setCurrentLodging] = useState(null);
 
     useEffect(() => {
@@ -24,15 +25,15 @@ export default function Lodging() {
                 setCurrentLodging(match);
             }
             else {
-                // Here you can handle the case where the lodging id was not found
-                // You could for example redirect the user to a 404 page
+                // Redirect the user to a 404 page
+                navigate('/Err404');
             }
         })
         .catch(function(err){
             console.log(err);
             // Here you can handle errors that occurred while fetching the data
         });
-    }, [id]);
+    }, [id, navigate]);
 
     return (
         <div className='Lodging'>
