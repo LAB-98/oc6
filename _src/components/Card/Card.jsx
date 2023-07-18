@@ -1,12 +1,11 @@
-import './Card.scss'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import './Card.scss';
 
-export default function Card({id, title, cover}) {
+const Card = ({ id, title, cover }) => (
+  <div className='card'>
+    <img src={cover} alt={title} className='card_img' />
+    <h2 className='card_title'>{title}</h2>
+  </div>
+);
 
-	return (
-		<Link to={`/lodging/${id}`} className="gallery_card">
-			<img src={cover} alt={title} />
-			<h3>{title}</h3>	
-		</Link>
-	)
-}
+export default Card;
