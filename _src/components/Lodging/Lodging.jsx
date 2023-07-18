@@ -1,22 +1,22 @@
-import './Lodging.scss';
-import ArrowRight from '../../assets/chevron_carousel_right.png';
-import ArrowLeft from '../../assets/chevron_carousel_left.png';
-import { useState } from 'react';
+import './Lodging.scss'
+import ArrowRight from '../../assets/chevron_carousel_right.png'
+import ArrowLeft from '../../assets/chevron_carousel_left.png'
+import { useState } from 'react'
 
-export default function Slider({imageSlider}) {
+export default function Lodging({imageSlider}) {
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0)
 
     const nextSlide = () => {
-        setCurrentIndex(prevIndex => 
-            prevIndex === imageSlider.length - 1 ? 0 : prevIndex + 1
-        );
+        setCurrentIndex(currentIndex + 1)
+        if(currentIndex === imageSlider.length - 1)
+            setCurrentIndex(0)
     }
 
     const prevSlide = () => {
-        setCurrentIndex(prevIndex => 
-            prevIndex === 0 ? imageSlider.length - 1 : prevIndex - 1
-        );
+        setCurrentIndex(currentIndex - 1)
+        if(currentIndex === 0)
+            setCurrentIndex(imageSlider.length - 1)
     }
 
     return (
@@ -39,5 +39,5 @@ export default function Slider({imageSlider}) {
                 </>
             } 
         </section>
-    );
+    )
 }

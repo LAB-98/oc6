@@ -1,11 +1,10 @@
 @import '../../sass/structure/reset';
 @import '../../sass/utils/mixins';
-@import '../../sass/utils/variables';
 
 .nav_list{
     display: flex;
     gap: 50px;
-    color: $color-secondary;
+    color: #FF6060;
     font-size: clamp(12px, 2.5vw, 24px);
     @media screen and (max-width: 700px){
         gap: 20px;
@@ -13,9 +12,9 @@
     &_item{
         &_active{
             position: relative;
-            color: $color-secondary;
+            color: #FF6060;
             transition: all 0.2s ease-in-out;
-            text-decoration: underline solid $color-secondary;
+            text-decoration: underline solid #FF6060;
             
         }
     }

@@ -1,34 +1,43 @@
-import React, { useState, useEffect } from 'react';
 import './Gallery.scss'
-import Card from '../Card/Card';
+import ArrowRight from '../../assets/chevron_carousel_right.png'
+import ArrowLeft from '../../assets/chevron_carousel_left.png'
+import { useState } from 'react'
 
-export default function Gallery() {
-    const [datas, setDatas] = useState([]);
-    
-    useEffect(() => {
-        fetch('/lodging.json')
-            .then((res) => {
-                if (res.ok) {
-                    return res.json();
-                }
-                throw new Error('Network response was not ok');
-            })
-            .then(setDatas)
-            .catch(console.error);
-    }, []);
+export default function Gallery(props) {
 
-    return (
-        <main className='home_gallery'>
-            {datas.map(data => {
-                return (
-                    <Card
-                        key={data.id}
-                        id={data.id}
-                        title={data.title}
-                        cover={data.cover}
-                    />
-                )
-            })}
-        </main>
-    );
+	const [currentIndex, setCurrentIndex] = useState(0)
+
+	const nextSlide = () => {
+		setCurrentIndex(currentIndex + 1)
+		if(currentIndex === props.images.length - 1)
+			setCurrentIndex(0)
+	}
+
+	const prevSlide = () => {
+		setCurrentIndex(currentIndex - 1)
+		if(currentIndex === 0)
+			setCurrentIndex(props.images.length - 1)
+	}
+
+	return (
+		<section style={{backgroundImage : `url(${props.images[currentIndex]})`}} className='carousel'>
+			{props.images.length > 1 &&
+				<div>
+					<img
+						className='carousel_arrow carousel_arrow_right'
+						src={ArrowRight}
+						alt="show next slider"
+						onClick={nextSlide}
+					/>
+					<img
+						className='carousel_arrow carousel_arrow_left'
+						src={ArrowLeft}
+						alt="show previous slider"
+						onClick={prevSlide}
+					/>
+					<p className='slideCount'>{currentIndex + 1} / {props.images.length}</p>
+				</div>
+			}
+		</section>
+	)
 }

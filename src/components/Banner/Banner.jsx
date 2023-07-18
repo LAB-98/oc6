@@ -1,19 +1,10 @@
-import React from "react";
-import './Banner.scss';
+import './Banner.scss'
 
-function Banner({image, content}) {
-    const bannerStyle = {
-        backgroundImage: `url(${image})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-    };
-
-    return (
-        <div className="banner" style={bannerStyle}>
-            <p>{content}</p>
-        </div>
-    );
+export default function Banner(props) {
+	return (
+		<section className='banner'>
+			<img src={props.image} alt={props.content} title={props.content} />
+			<p>{props.content}</p>
+		</section>
+	)
 }
-
-
-export default Banner;
