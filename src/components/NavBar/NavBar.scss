@@ -9,6 +9,7 @@
     font-size: clamp(12px, 2.5vw, 24px);
     @media screen and (max-width: 700px){
         gap: 20px;
+        text-transform: uppercase;
     }
     &_item{
         &_active{

@@ -4,6 +4,7 @@
     background-color: $color-tertiary;
     border-radius: 0 0 5px 5px;
     margin: 0 auto;
+    max-width: 1023px;
 
     &_title {
         @include flex(row, space-between, center);

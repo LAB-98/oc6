@@ -4,11 +4,12 @@
 
 .about_main {
     margin: 0 auto;
+    width: 95%;
 
-    &_collapse {
+    &_collapse{
+        width: 95%;
         margin: 40px auto;
-
-        @media screen and (max-width: 550px) {
+        @media screen and (max-width: 550px){
             margin: 20px auto;
         }
     }

@@ -8,20 +8,29 @@
         color: $color-secondary;
         width: 90%;
         margin: 0 auto;
+        @media screen and (max-width: 650px){
+            @include flex(column, space-between, flex-start);   
+            gap: 10px;   
+        }
 
         &_infos {
             &_title {
                 font-weight: 500;
                 margin-bottom: 10px;
+                font-size: 36px;
             }
 
             &_location {
-                font-size: 14px;
-                margin-bottom: 10px;
+                display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 14px;
             }
 
             &_tagbutton {
                 display: inline;
+                font-size: 14px;
                 padding: 5px 15px;
                 margin-right: 10px;
                 cursor: pointer;
@@ -40,14 +49,20 @@
             @include flex(row-reverse, flex-start, center);
             gap: 10px;
             margin-bottom: 20px;
+            @media screen and (max-width: 650px){
+                width: 100%;
+                @include flex(row-reverse, space-between, center); 
+                gap: 0 5px;      
+            }
 
             &_name {
-                margin-right: 10px;
+                align-self: center;
+                flex-direction: column;
             }
 
             img {
-                width: 50px;
-                height: 50px;
+                width: 64px;
+                height: 64px;
                 object-fit: cover;
                 object-position: center;
                 border-radius: 50%;
@@ -60,6 +75,10 @@
                 display: flex;
                 gap: 5px;
                 justify-content: end;
+                @media screen and (max-width: 650px){
+                    width: 20px;
+                    height: 20px;  
+                }
             }
         }
 
