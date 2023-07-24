@@ -1,4 +1,6 @@
-@import '../../sass/primary.scss';
+@import '../../sass/primary';
+@import '../../sass/utils/mixins';
+@import '../../sass/structure/reset';
 
 .Lodging {
     &_content {
@@ -9,7 +11,6 @@
 
         &_infos {
             &_title {
-                font-size: 20px;
                 font-weight: 500;
                 margin-bottom: 10px;
             }
@@ -19,10 +20,19 @@
                 margin-bottom: 10px;
             }
 
-            &_tags {
-                display: flex;
-                gap: 10px;
-                margin-bottom: 20px;
+            &_tagbutton {
+                display: inline;
+                padding: 5px 15px;
+                margin-right: 10px;
+                cursor: pointer;
+                border-radius: 10px;
+                border: none;
+                color: $color-primary;
+                background-color: $color-secondary;
+                &:hover{
+                    box-shadow: 0 2px 8px $color-secondary;
+                }
+            
             }
         }
 
@@ -41,25 +51,40 @@
                 object-fit: cover;
                 object-position: center;
                 border-radius: 50%;
+                &:hover{
+                    box-shadow: 0 2px 8px $color-secondary;
+                }
             }
 
             &_stars {
                 display: flex;
                 gap: 5px;
+                justify-content: end;
             }
         }
 
-        &_collapse {
-            display: flex;
-            justify-content: center;
-            gap: 76px;
-            width: 50%;
-            margin-top: 20px;
-
-            &_item {
-                flex: 1;
-                max-width: 600px; // control the maximum width of the collapse item here
-            }
+        .duobox {
+					display: flex;
+					width: 100%;
+					flex-direction: row;
+					justify-content: space-between;
+					flex-wrap: wrap;
+                    padding-bottom: 50px;
+                   
+					.duobox-left {
+						width: 47%;
+					}
+					.duobox-right {
+						width: 47%;
+					}
+					@media screen and (max-width: 550px) {
+						.duobox-left {
+							width: 100%;
+						}
+						.duobox-right {
+							width: 100%;
+						}
+        	}
         }
     }
 }

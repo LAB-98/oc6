@@ -1,4 +1,6 @@
-@import '../../sass/primary.scss';
+@import '../../sass/primary';
+@import '../../sass/utils/mixins';
+@import '../../sass/structure/reset';
 
 .err404{
     max-width: 95%;
