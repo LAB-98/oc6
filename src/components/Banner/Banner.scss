@@ -1,56 +1,64 @@
 @import '../../sass/primary.scss';
 
 .banner {
-	position: relative;
-	border-radius: 10px;
-	overflow: hidden;
-	height: 40vh;
-	max-width: 95%;
-	margin: 43px auto;
-	text-align: center;
-	display: block;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 40vh;
+    max-width: 95%;
+    margin: 43px auto;
+    text-align: center;
+    display: block;
 
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		background: rgba(0, 0, 0, 0.3); // Change the last value for different darkness levels
-		z-index: 1;
-	}
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3); // Change the last value for different darkness levels
+        z-index: 1;
+    }
 
-	img {
-		width: 100%;
-		height: 100%; // ensure the image takes up the full height of the parent
-		object-fit: fill; 
-		object-position: center;
-		z-index: 0;
-	}
+    img {
+        width: 100%;
+        height: 100%; // ensure the image takes up the full height of the parent
+        object-fit: fill; 
+        object-position: center;
+        z-index: 0;
+    }
 
-	p {
-		color: $color-primary;
-		font-size: clamp(20px, 4vw, 48px);
-		font-weight: 500;
-		position: absolute;
-		top: 40%;
-		width: 100%;
-		z-index: 2;
-	}
+    p {
+        color: $color-primary;
+        font-size: clamp(20px, 4vw, 48px);
+        font-weight: 500;
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        z-index: 2;
+    }
 
-	@media screen and (max-width: 374px) {
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover; // The image will cover the full container, possibly resulting in some cropping
-			object-position: center;
-		}
-		p {
-			text-align: left;
-			padding-left: 10px;
-			font-size: 24px;
-		}
-		
-	}
+    &.about-banner {
+        @media screen and (max-width: 374px) {
+            height: 50vh;
+        }
+    }
+
+    @media screen and (max-width: 374px) {
+        height: 25vh; 
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            object-position: center;
+        }
+        p {
+            text-align: left;
+            padding-left: 10px;
+            font-size: 24px;
+            justify-content: flex-start;
+            transform: translateY(-20%);
+        }
+    }
 }
