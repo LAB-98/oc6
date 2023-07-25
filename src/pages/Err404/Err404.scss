@@ -1,6 +1,4 @@
-@import '../../sass/primary';
-@import '../../sass/utils/mixins';
-@import '../../sass/structure/reset';
+@import '../../sass/primary.scss';
 
 .err404{
     max-width: 95%;
@@ -13,6 +11,7 @@
         &_title{
             font-weight: 700;
             font-size: 288px;
+            padding-bottom: 30px;
             @media screen and (max-width: 768px) {
                 font-size: 140px;    
             }
@@ -21,12 +20,14 @@
             font-weight: 500;
             font-size: clamp(20px, 4vw, 36px);
             text-align: center;
+            padding-bottom: 70px;
         }
         &_return{
             display: block;
             text-align: center;
             font-weight: 500;
-            font-size: clamp(12px, 2.5vw, 18px);
+            font-size: 18px;
+            text-decoration: underline;
         }
     }
 }

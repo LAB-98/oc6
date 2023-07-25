@@ -7,7 +7,7 @@
     gap: 50px;
     color: $color-secondary;
     font-size: clamp(12px, 2.5vw, 24px);
-    @media screen and (max-width: 700px){
+    @media screen and (max-width: 374px){
         gap: 20px;
         text-transform: uppercase;
     }
