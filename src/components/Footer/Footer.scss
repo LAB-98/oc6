@@ -2,18 +2,21 @@
 @import '../../sass/utils/variables';
 
 .footer {
-    @include flex(column);
-    gap: 50px;
+    @include flex(column, center, center); // center items both horizontally and vertically
+    gap: 10px; // reduce the gap
     width: 100%;
     height: 200px;
     background-color: #000;
-    @media screen and (max-width: 374px){
-        .break-line {
-            display: block;
-          }
-        }
 
     &_copyright {
         color: $color-primary;
+    }
+
+    @media screen and (max-width: 374px) {
+        &_copyright {
+            span {
+                display: block;
+            }
+        }
     }
 }

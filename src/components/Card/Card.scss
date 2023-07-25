@@ -16,6 +16,9 @@
     @media screen and (max-width: 550px){
         width: 100%;
     }
+    @media screen and (max-width: 374px){
+        background-color: transparent; // make the background transparent on small screens
+    }
 }
 
 .gallery_card{

@@ -83,27 +83,28 @@
         }
 
         .duobox {
-					display: flex;
-					width: 100%;
-					flex-direction: row;
-					justify-content: space-between;
-					flex-wrap: wrap;
-                    padding-bottom: 50px;
-                   
-					.duobox-left {
-						width: 47%;
-					}
-					.duobox-right {
-						width: 47%;
-					}
-					@media screen and (max-width: 374px) {
-						.duobox-left {
-							width: 100%;
-						}
-						.duobox-right {
-							width: 100%;
-						}
-        	}
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-bottom: 50px;
+
+            .duobox-left {
+                width: 47%;
+            }
+            .duobox-right {
+                width: 47%;
+            }
+            @media screen and (max-width: 374px) {
+                .duobox-left {
+                    width: 100%;
+                    margin-bottom: 20px;  // add space below this box on small screens
+                }
+                .duobox-right {
+                    width: 100%;
+                }
+            }
         }
     }
 }
