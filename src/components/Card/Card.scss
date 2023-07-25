@@ -16,7 +16,7 @@
     @media screen and (max-width: 550px){
         width: 100%;
     }
-    @media screen and (max-width: 374px){
+    @media screen and (max-width: 375px){
         background-color: transparent; // make the background transparent on small screens
     }
 }
@@ -35,7 +35,7 @@
     @media screen and (max-width: 900px){
         width: 100%;    
     }
-    @media screen and (max-width: 374px){
+    @media screen and (max-width: 375px){
         height: 200px;
     }
     &::after{
