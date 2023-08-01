@@ -1,10 +1,10 @@
 import './Banner.scss'
 
-export default function Banner(props) {
-	return (
-		<section className='banner'>
-			<img src={props.image} alt={props.content} title={props.content} />
-			<p>{props.content}</p>
-		</section>
-	)
+export default function Banner({ image, content, variant }) {
+    return (
+        <section className={`banner ${variant}`}>
+            <img src={image} alt={content} title={content} />
+            <p>{content}</p>
+        </section>
+    )
 }

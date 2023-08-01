@@ -1,6 +1,7 @@
 @import '../../sass/primary.scss';
 
 .footer {
+    box-sizing: border-box; // new property
     @include flex(column, center, center); // center items both horizontally and vertically
     gap: 10px; // reduce the gap
     width: 100%;
@@ -12,6 +13,7 @@
     }
 
     @media screen and (max-width: 375px) {
+        height: 209px;
         &_copyright {
             span {
                 display: block;

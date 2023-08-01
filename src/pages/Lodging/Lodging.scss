@@ -8,7 +8,8 @@
         margin: 0 auto;
         @media screen and (max-width: 375px){
             @include flex(column, space-between, flex-start);   
-            gap: 10px;   
+            gap: 10px;
+            width: 90%;
         }
 
         &_infos {
@@ -16,6 +17,14 @@
                 font-weight: 500;
                 margin-bottom: 10px;
                 font-size: 36px;
+                @media screen and (max-width: 575px) {
+                    font-size: 20px;
+                    font-weight: 400;
+                }
+                @media screen and (max-width: 375px) {
+                    font-size: 20px;
+                    font-weight: 400;
+                }
             }
 
             &_location {
@@ -27,15 +36,27 @@
             }
 
             &_tagbutton {
+                display: flex;
                 display: inline;
                 font-size: 14px;
                 padding: 5px 15px;
                 margin-right: 10px;
+                width: fit-content;
                 cursor: pointer;
                 border-radius: 10px;
                 border: none;
                 color: $color-primary;
                 background-color: $color-secondary;
+                @media screen and (max-width: 575px) {
+                    font-size: 10px;
+                    max-width: 30%;
+                    text-align: center;
+                }
+                @media screen and (max-width: 375px) {
+                    font-size: 10px;
+                    max-width: 30%;
+                    text-align: center;
+                }
                 &:hover{
                     box-shadow: 0 2px 8px $color-secondary;
                 }
@@ -44,18 +65,27 @@
         }
 
         &_host {
-            @include flex(row-reverse, flex-start, center);
+            @include flex(row, flex-end, center);
             gap: 10px;
             margin-bottom: 20px;
+            @media screen and (max-width: 575px){
+                width: 100%;
+                @include flex(row, center); 
+                gap: 0 5px;      
+            }
             @media screen and (max-width: 375px){
                 width: 100%;
-                @include flex(row-reverse, space-between, center); 
+                @include flex(row, center); 
                 gap: 0 5px;      
             }
 
             &_name {
                 align-self: center;
                 flex-direction: column;
+                @media screen and (max-width: 375px){
+                    display: flex;
+                    justify-content: flex-end;   
+                }
             }
 
             img {
@@ -73,9 +103,15 @@
                 display: flex;
                 gap: 5px;
                 justify-content: flex-end;
+                @media screen and (max-width: 575px){
+                    width: 20px;
+                    height: 20px;  
+                    justify-content: left;
+                }
                 @media screen and (max-width: 375px){
                     width: 20px;
                     height: 20px;  
+                    justify-content: left;
                 }
             }
         }
@@ -94,10 +130,20 @@
             .duobox-right {
                 width: 47%;
             }
+            @media screen and (max-width: 575px) {
+                .duobox-left {
+                    width: 100%;  // add space below this box on small screens
+                    margin-bottom: 20px;
+                }
+                .duobox-right {
+                    width: 100%;
+                    
+                }
+            }
             @media screen and (max-width: 375px) {
                 .duobox-left {
-                    width: 100%;
-                    margin-bottom: 20px;  // add space below this box on small screens
+                    width: 100%;  // add space below this box on small screens
+                    margin-bottom: 20px;
                 }
                 .duobox-right {
                     width: 100%;

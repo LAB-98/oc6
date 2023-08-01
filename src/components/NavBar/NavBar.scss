@@ -5,7 +5,8 @@
     gap: 50px;
     color: $color-secondary;
     font-size: clamp(12px, 2.5vw, 24px);
-    @media screen and (max-width: 375px){
+    font-weight: 500;
+    @media screen and (max-width: 900px){
         gap: 20px;
         text-transform: uppercase;
     }

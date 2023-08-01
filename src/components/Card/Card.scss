@@ -6,17 +6,19 @@
     gap: 50px;
     background-color: $color-tertiary;
     padding: 50px;
+    padding-bottom: 20px;
     border-radius: 25px;
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
     @media screen and (max-width: 1230px){
         gap: 25px;
         padding:25px 15px;
     }
-    @media screen and (max-width: 550px){
+    @media screen and (max-width: 90px){
         width: 100%;
+        background-color: transparent;
     }
-    @media screen and (max-width: 374px){
+    @media screen and (max-width: 375px){
         background-color: transparent; // make the background transparent on small screens
     }
 }
@@ -35,7 +37,7 @@
     @media screen and (max-width: 900px){
         width: 100%;    
     }
-    @media screen and (max-width: 374px){
+    @media screen and (max-width: 375px){
         height: 200px;
     }
     &::after{
