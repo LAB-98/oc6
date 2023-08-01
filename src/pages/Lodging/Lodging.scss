@@ -1,6 +1,4 @@
-@import '../../sass/primary';
-@import '../../sass/utils/mixins';
-@import '../../sass/structure/reset';
+@import '../../sass/primary.scss';
 
 .Lodging {
     &_content {
@@ -8,7 +6,7 @@
         color: $color-secondary;
         width: 90%;
         margin: 0 auto;
-        @media screen and (max-width: 375px){
+        @media screen and (max-width: 374px){
             @include flex(column, space-between, flex-start);   
             gap: 10px;   
         }
@@ -49,7 +47,7 @@
             @include flex(row-reverse, flex-start, center);
             gap: 10px;
             margin-bottom: 20px;
-            @media screen and (max-width: 375px){
+            @media screen and (max-width: 374px){
                 width: 100%;
                 @include flex(row-reverse, space-between, center); 
                 gap: 0 5px;      
@@ -74,8 +72,8 @@
             &_stars {
                 display: flex;
                 gap: 5px;
-                justify-content: end;
-                @media screen and (max-width: 375px){
+                justify-content: flex-end;
+                @media screen and (max-width: 374px){
                     width: 20px;
                     height: 20px;  
                 }
@@ -96,7 +94,7 @@
             .duobox-right {
                 width: 47%;
             }
-            @media screen and (max-width: 375px) {
+            @media screen and (max-width: 374px) {
                 .duobox-left {
                     width: 100%;
                     margin-bottom: 20px;  // add space below this box on small screens

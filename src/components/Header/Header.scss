@@ -1,4 +1,4 @@
-@import '../../sass/utils/mixins';
+@import '../../sass/primary.scss';
 
 .header {
     @include flex(row, space-between, center);
@@ -16,7 +16,7 @@
     img {
         height: 60%;
 
-        @media screen and (max-width: 375px) {
+        @media screen and (max-width: 374px) {
             height: 40px;
         }
     }

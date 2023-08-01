@@ -1,5 +1,4 @@
-@import '../../sass/utils/mixins';
-@import '../../sass/utils/variables';
+@import '../../sass/primary.scss';
 
 .footer {
     @include flex(column, center, center); // center items both horizontally and vertically
@@ -12,7 +11,7 @@
         color: $color-primary;
     }
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 374px) {
         &_copyright {
             span {
                 display: block;

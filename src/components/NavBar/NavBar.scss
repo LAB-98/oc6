@@ -1,13 +1,11 @@
-@import '../../sass/structure/reset';
-@import '../../sass/utils/mixins';
-@import '../../sass/utils/variables';
+@import '../../sass/primary.scss';
 
 .nav_list{
     display: flex;
     gap: 50px;
     color: $color-secondary;
     font-size: clamp(12px, 2.5vw, 24px);
-    @media screen and (max-width: 375px){
+    @media screen and (max-width: 374px){
         gap: 20px;
         text-transform: uppercase;
     }
