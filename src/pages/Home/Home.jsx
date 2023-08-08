@@ -21,11 +21,10 @@ export default function Home() {
 	return (
 		<main className='Home'>
 			<div>
-			<Banner
-	image={BannerImage}
-	content={window.innerWidth <= 374 ? <><span>Chez vous,</span><br/><span>partout et ailleurs</span></> : "Chez vous, partout et ailleurs"}/>
-
-
+				<Banner
+					image={BannerImage}
+					content={<span>Chez vous, <br/>partout et ailleurs</span>}
+				/>
 				<div className="home_gallery">
 					{lodgings && lodgings.length > 0 && lodgings.map((data, index) => (
 						<Card

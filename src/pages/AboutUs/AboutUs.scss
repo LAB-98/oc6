@@ -7,13 +7,14 @@
         margin: 40px auto;
         @media screen and (max-width: 375px){
             margin: 20px auto;
+	        	width: 100%;
         }
     }
     &_banner{
         width: 90%;
         @media screen and (max-width: 375px){
-            width: fit-content;;
+            width: fit-content;
+	        	width: 100%;
         }
     }
-
 }

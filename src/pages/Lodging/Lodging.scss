@@ -13,26 +13,24 @@
         }
 
         &_infos {
-            &_title {
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 36px;
+            @media screen and (max-width: 575px) {
+                font-size: 18px;
                 font-weight: 500;
-                margin-bottom: 10px;
-                font-size: 36px;
-                @media screen and (max-width: 575px) {
-                    font-size: 20px;
-                    font-weight: 400;
-                }
-                @media screen and (max-width: 375px) {
-                    font-size: 20px;
-                    font-weight: 400;
-                }
+            }
+            @media screen and (max-width: 375px) {
+                font-size: 18px;
+                font-weight: 500;
             }
 
             &_location {
                 display: flex;
-            flex-direction: column;
-            gap: 10px;
-            font-weight: 500;
-            font-size: 14px;
+            		flex-direction: column;
+            		gap: 10px;
+            		font-weight: 500;
+            		font-size: 14px;
             }
 
             &_tagbutton {
@@ -40,7 +38,7 @@
                 display: inline;
                 font-size: 14px;
                 padding: 5px 15px;
-                margin-right: 10px;
+                margin: 20px 10px 0 0;
                 width: fit-content;
                 cursor: pointer;
                 border-radius: 10px;
@@ -80,12 +78,8 @@
             }
 
             &_name {
-                align-self: center;
-                flex-direction: column;
-                @media screen and (max-width: 375px){
-                    display: flex;
-                    justify-content: flex-end;   
-                }
+							word-spacing: 9999px;
+							text-align: right;
             }
 
             img {
@@ -149,6 +143,22 @@
                     width: 100%;
                 }
             }
+        }
+        @media screen and (max-width: 575px) {
+	        .duobox-mobile-only {
+	            display: flex;
+	            width: 100%;
+	            flex-direction: row-reverse;
+	            justify-content: space-between;
+	            flex-wrap: wrap;
+	            padding-bottom: 50px;
+	            .Lodging_content_host {
+	                width: 47%;
+	            }
+	            .Lodging_content_host_stars {
+	                width: 47%;
+	            }
+	        }
         }
     }
 }

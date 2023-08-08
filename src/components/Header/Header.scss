@@ -2,8 +2,9 @@
 
 .header {
     @include flex(row, space-between, center);
+		max-width: 1440px;
     height: 68px;
-    max-width: 95%;
+    width: 90%;
     margin: 0 auto;
 
     @media screen and (max-width: 900px) {

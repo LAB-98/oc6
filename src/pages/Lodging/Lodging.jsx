@@ -52,22 +52,23 @@ export default function Lodging() {
 								</div>
 							</div>
 							<div className='duobox-right'>
-								<div className='Lodging_content_host'>
-									<span>{currentLodging.host.name.split(' ')[0]}</span>
-									<span>{currentLodging.host.name.split(' ')[1]}</span>
-									<img src={currentLodging.host.picture} alt="host of this lodging" />
-								</div>
-								<div className='Lodging_content_host_stars'>
-									{[...Array(5)].map((star, index) => {
-										const ratingValue = index + 1;
-										return (
-											<img
-												key={index}
-												src={ratingValue <= currentLodging.rating ? redStar : greyStar}
-												alt="star"
-											/>
-										)
-									})}
+								<div className='duobox-mobile-only'>
+									<div className='Lodging_content_host'>
+										<span className='Lodging_content_host_name'>{currentLodging.host.name}</span>
+										<img src={currentLodging.host.picture} alt="host of this lodging" />
+									</div>
+									<div className='Lodging_content_host_stars'>
+										{[...Array(5)].map((star, index) => {
+											const ratingValue = index + 1;
+											return (
+												<img
+													key={index}
+													src={ratingValue <= currentLodging.rating ? redStar : greyStar}
+													alt="star"
+												/>
+											)
+										})}
+									</div>
 								</div>
 							</div>
 						</div>

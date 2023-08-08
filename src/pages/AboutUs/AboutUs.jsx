@@ -23,7 +23,6 @@ export default function AboutUs() {
         <div>
             <main className='about_main'>
                 <Banner
-                    variant='about-us'  // Ajout de la variante ici
                     image={BannerImage}
                     content=""
                 />
