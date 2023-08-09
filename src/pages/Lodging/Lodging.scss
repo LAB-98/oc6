@@ -47,12 +47,12 @@
                 background-color: $color-secondary;
                 @media screen and (max-width: 575px) {
                     font-size: 10px;
-                    max-width: 30%;
+                    max-width: none;
                     text-align: center;
                 }
                 @media screen and (max-width: 375px) {
                     font-size: 10px;
-                    max-width: 30%;
+                    max-width: none;
                     text-align: center;
                 }
                 &:hover{
@@ -69,12 +69,14 @@
             @media screen and (max-width: 575px){
                 width: 100%;
                 @include flex(row, center); 
-                gap: 0 5px;      
+                gap: 0 5px;   
+                margin-bottom: 0;     
             }
             @media screen and (max-width: 375px){
                 width: 100%;
                 @include flex(row, center); 
-                gap: 0 5px;      
+                gap: 0 5px;    
+                margin-bottom: 0;  
             }
 
             &_name {
@@ -151,7 +153,8 @@
 	            flex-direction: row-reverse;
 	            justify-content: space-between;
 	            flex-wrap: wrap;
-	            padding-bottom: 50px;
+	            padding-bottom: 0;
+                align-items: center;
 	            .Lodging_content_host {
 	                width: 47%;
 	            }

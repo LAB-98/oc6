@@ -44,11 +44,13 @@
         letter-spacing: 1px;
     }
 
-    &_content {
+    .collapse_content, .collapse_content li {
         visibility: visible;
         opacity: 1;
         height: auto;
         font-weight: 400;
+        margin-top: 3px;
+        margin-bottom: 3px;
     }
 
     &_content_hidden {
